@@ -2,7 +2,6 @@ var capture;
 var graphics;
 var cnt;
 var speed;
-var speedSlider;
 var togglePlay;
 var bPlay = true;
 var firstDraw = true;
@@ -32,7 +31,6 @@ function setup() {
   speed = 5;
 
   // UI
-  speedSlider = createSlider(1, 20, speed);
   togglePlay = createButton("stop");
   togglePlay.mousePressed(function() {
     if(bPlay) {
@@ -45,8 +43,6 @@ function setup() {
 }
 
 function draw() {
-  speed = speedSlider.value();
-
   // grab an image
   graphics[firstFrame].background(255);
   graphics[firstFrame].image(capture, 0, 0, capture.width, capture.height);
